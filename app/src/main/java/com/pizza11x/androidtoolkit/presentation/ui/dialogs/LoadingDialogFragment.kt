@@ -24,7 +24,7 @@ class LoadingDialogFragment : DialogFragment() {
         return inflater.inflate(R.layout.fragment_loading, container, false)
     }
 
-    companion object{
+    companion object {
         const val TAG = "LOADER_DIALOG"
     }
 }
