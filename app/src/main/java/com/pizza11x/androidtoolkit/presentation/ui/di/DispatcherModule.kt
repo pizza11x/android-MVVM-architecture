@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.modules
+package com.pizza11x.androidtoolkit.presentation.ui.di
 
 import com.pizza11x.androidtoolkit.utils.annotations.DefaultDispatcher
 import com.pizza11x.androidtoolkit.utils.annotations.IoDispatcher
