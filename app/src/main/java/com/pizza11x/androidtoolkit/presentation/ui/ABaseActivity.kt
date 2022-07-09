@@ -7,7 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import com.pizza11x.androidtoolkit.utils.bindLayout
 
-abstract class BaseActivity<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int): AppCompatActivity() {
+abstract class ABaseActivity<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int): AppCompatActivity() {
 
     protected lateinit var binding: BindingType
     abstract val viewModel : ViewModel

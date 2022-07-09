@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding
 fun <T : ViewDataBinding> bindLayout(
     inflater: LayoutInflater,
     layout: Int,
-    viewGroup: ViewGroup
+    viewGroup: ViewGroup?
 ): T {
     return DataBindingUtil.inflate(inflater, layout, viewGroup, false)
 }
