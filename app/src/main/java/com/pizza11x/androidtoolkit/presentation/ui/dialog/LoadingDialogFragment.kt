@@ -11,10 +11,7 @@ import com.pizza11x.androidtoolkit.R
 
 class LoadingDialogFragment : DialogFragment() {
 
-    companion object{
-        const val TAG = "LOADER_DIALOG"
-    }
-
+    /* DIALOG FRAGMENT FUN */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,4 +24,7 @@ class LoadingDialogFragment : DialogFragment() {
         return inflater.inflate(R.layout.fragment_loading, container, false)
     }
 
+    companion object{
+        const val TAG = "LOADER_DIALOG"
+    }
 }

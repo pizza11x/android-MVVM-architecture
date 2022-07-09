@@ -12,10 +12,13 @@ import com.pizza11x.androidtoolkit.utils.bindLayout
 
 abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
     Fragment() {
-        protected lateinit var binding : BindingType
-        //TODO Change with Base ViewModel
-        abstract val viewModel : ViewModel
 
+    /* VARIABLES */
+    protected lateinit var binding: BindingType
+    //TODO Change with Base ViewModel
+    abstract val viewModel: ViewModel
+
+    /* FRAGMENT FUN */
     final override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,5 +35,6 @@ abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private v
         viewReady()
     }
 
+    /* ABSTRACT FUN */
     abstract fun viewReady()
 }

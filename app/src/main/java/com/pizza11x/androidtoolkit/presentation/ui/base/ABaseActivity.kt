@@ -9,9 +9,11 @@ import com.pizza11x.androidtoolkit.utils.bindLayout
 
 abstract class ABaseActivity<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int): AppCompatActivity() {
 
+    /* VARIABLES */
     protected lateinit var binding: BindingType
     abstract val viewModel : ViewModel
 
+    /* ACTIVITY FUNCTION */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = bindLayout(layout)

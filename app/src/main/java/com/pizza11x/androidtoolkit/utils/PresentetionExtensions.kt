@@ -1,23 +1,29 @@
 package com.pizza11x.androidtoolkit.utils
 
 import android.app.Activity
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import com.pizza11x.androidtoolkit.presentation.ui.base.ABaseAdapter
 import com.pizza11x.androidtoolkit.presentation.ui.dialog.LoadingDialogFragment
 
-/*
-    Binding inflate Layout
- */
+/*ACTIVITY */
 fun <T : ViewDataBinding> Activity.bindLayout(layout: Int): T {
     return DataBindingUtil.setContentView(this, layout)
 
 }
 
+fun AppCompatActivity.closeSoftKeyboard() {
+    currentFocus?.let { closeSoftKeyboard(it) }
+}
+
+/* FRAGMENT */
 fun Fragment.openSoftKeyboard(view: View) {
     if (view.requestFocus()) {
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
@@ -26,10 +32,6 @@ fun Fragment.openSoftKeyboard(view: View) {
 
 fun Fragment.closeSoftKeyboard() {
     view?.let { activity?.closeSoftKeyboard(it) }
-}
-
-fun AppCompatActivity.closeSoftKeyboard() {
-    currentFocus?.let { closeSoftKeyboard(it) }
 }
 
 fun Fragment.showLoader() {
