@@ -15,9 +15,7 @@ abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private v
 
     /* VARIABLES */
     protected lateinit var binding: BindingType
-
-    //TODO Change with Base ViewModel
-    abstract val viewModel: ViewModel
+    abstract val viewModel: ABaseViewModel
 
     /* FRAGMENT FUN */
     final override fun onCreateView(
