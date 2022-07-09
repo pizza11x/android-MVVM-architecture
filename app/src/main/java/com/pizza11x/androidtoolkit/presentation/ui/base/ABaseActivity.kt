@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import com.pizza11x.androidtoolkit.utils.bindLayout
+import dagger.hilt.android.AndroidEntryPoint
 
 abstract class ABaseActivity<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int): AppCompatActivity() {
 

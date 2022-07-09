@@ -8,13 +8,13 @@ import com.pizza11x.androidtoolkit.utils.annotations.DefaultDispatcher
 import com.pizza11x.androidtoolkit.utils.annotations.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-abstract class ABaseViewModel @Inject constructor(
-    @DefaultDispatcher private val dispatcher: CoroutineDispatcher,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+abstract class ABaseViewModel(
+    private val dispatcher: CoroutineDispatcher? = null
 ) : ViewModel() {
     /* LIVE DATA */
     var loadingStatus = MutableLiveData<LoadingStatus>()
@@ -23,12 +23,12 @@ abstract class ABaseViewModel @Inject constructor(
     // COROUTINES
     protected fun defaultCoroutine(block: suspend CoroutineScope.() -> Unit) =
         viewModelScope.launch(
-            dispatcher, block = block
+            dispatcher ?: Dispatchers.Default, block = block
         )
 
     protected fun ioCoroutine(block: suspend CoroutineScope.() -> Unit) =
         viewModelScope.launch(
-            ioDispatcher, block = block
+            dispatcher ?: Dispatchers.IO, block = block
         )
 
     // LOADING
