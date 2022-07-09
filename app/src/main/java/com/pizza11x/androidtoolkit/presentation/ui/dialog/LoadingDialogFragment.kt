@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui
+package com.pizza11x.androidtoolkit.presentation.ui.dialog
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -24,8 +24,7 @@ class LoadingDialogFragment : DialogFragment() {
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             isCancelable = false
         }
-        //TODO RETURN INFLATE LAYOUT LOADER
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.fragment_loading, container, false)
     }
 
 }

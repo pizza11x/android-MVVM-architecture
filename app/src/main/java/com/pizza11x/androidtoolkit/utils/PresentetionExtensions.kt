@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import com.pizza11x.androidtoolkit.presentation.ui.LoadingDialogFragment
+import com.pizza11x.androidtoolkit.presentation.ui.dialog.LoadingDialogFragment
 
 /*
     Binding inflate Layout

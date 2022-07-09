@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui
+package com.pizza11x.androidtoolkit.presentation.ui.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
