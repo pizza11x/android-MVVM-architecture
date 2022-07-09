@@ -37,7 +37,6 @@ abstract class ABaseDialogFragment<BindingType : ViewDataBinding>(
         }
     }
 
-
     companion object {
         const val TAG = "BASE_DIALOG"
     }
