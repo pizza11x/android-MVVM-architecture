@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
+/* DATA BINDING */
 fun <T : ViewDataBinding> bindLayout(
     inflater: LayoutInflater,
     layout: Int,
@@ -17,6 +18,7 @@ fun <T : ViewDataBinding> bindLayout(
     return DataBindingUtil.inflate(inflater, layout, viewGroup, false)
 }
 
+/* CONTEXT */
 fun Context.closeSoftKeyboard(view: View) {
     val inputMethodManager =
         getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager
