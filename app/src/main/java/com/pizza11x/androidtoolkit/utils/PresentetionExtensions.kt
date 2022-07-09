@@ -1,16 +1,15 @@
 package com.pizza11x.androidtoolkit.utils
 
 import android.app.Activity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import com.pizza11x.androidtoolkit.presentation.ui.base.ABaseAdapter
+import androidx.fragment.app.FragmentActivity
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.pizza11x.androidtoolkit.presentation.ui.dialog.LoadingDialogFragment
 
 /*ACTIVITY */
@@ -35,18 +34,39 @@ fun Fragment.closeSoftKeyboard() {
 }
 
 fun Fragment.showLoader() {
-    with(requireActivity().supportFragmentManager) {
+    showLoader(requireActivity())
+}
+
+fun Fragment.hideLoader() {
+    hideLoader(requireActivity())
+}
+
+/* BOTTOMSHEET DIALOG FRAGMENT*/
+
+fun BottomSheetDialogFragment.showLoader() {
+    showLoader(requireActivity())
+}
+
+fun BottomSheetDialogFragment.hideLoader() {
+    hideLoader(requireActivity())
+}
+
+
+/* PRIVATE FUN */
+
+private fun showLoader(activity: FragmentActivity) {
+    with(activity.supportFragmentManager) {
         if (findFragmentByTag(LoadingDialogFragment.TAG) == null) {
             LoadingDialogFragment().show(
-                requireActivity().supportFragmentManager,
+                this,
                 LoadingDialogFragment.TAG
             )
         }
     }
 }
 
-fun Fragment.hideLoader() {
-    with(requireActivity().supportFragmentManager) {
+private fun hideLoader(activity: FragmentActivity) {
+    with(activity.supportFragmentManager) {
         findFragmentByTag(LoadingDialogFragment.TAG)?.let {
             if (it is DialogFragment)
                 it.dismiss()
