@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.pizza11x.androidtoolkit.presentation.ui.dialog.LoadingDialogFragment
+import com.pizza11x.androidtoolkit.presentation.ui.dialogs.LoadingDialogFragment
 
 /*ACTIVITY */
 fun <T : ViewDataBinding> Activity.bindLayout(layout: Int): T {

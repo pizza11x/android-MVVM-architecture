@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui.dialog
+package com.pizza11x.androidtoolkit.presentation.ui.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

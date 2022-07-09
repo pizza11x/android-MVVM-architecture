@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.pizza11x.androidtoolkit.presentation.viewmodel.base.ABaseViewModel
 import com.pizza11x.androidtoolkit.utils.bindLayout
 
 abstract class ABaseBottomSheetDialogFragment<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
