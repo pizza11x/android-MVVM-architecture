@@ -8,7 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.pizza11x.androidtoolkit.presentation.ui.IUiModel
+import com.pizza11x.androidtoolkit.domain.models.IUiModel
 
 abstract class ABaseAdapter<N : IUiModel> :
     RecyclerView.Adapter<ABaseAdapter<N>.ABaseViewHolder>() {

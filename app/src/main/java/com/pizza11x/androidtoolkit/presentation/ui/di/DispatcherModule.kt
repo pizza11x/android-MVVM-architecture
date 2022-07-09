@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.modules
+package com.pizza11x.androidtoolkit.presentation.ui.di
 
 import com.pizza11x.androidtoolkit.utils.annotations.DefaultDispatcher
 import com.pizza11x.androidtoolkit.utils.annotations.IoDispatcher
@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DispatcherModule{
+object DispatcherModule {
     @DefaultDispatcher
     @Provides
     fun providesDefualtDispatcher(): CoroutineDispatcher = Dispatchers.Default

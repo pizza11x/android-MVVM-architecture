@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui
+package com.pizza11x.androidtoolkit.domain.models
 
 interface IUiModel {
     /* VARIABLES */

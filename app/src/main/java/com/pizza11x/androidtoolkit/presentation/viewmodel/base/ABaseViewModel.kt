@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui.base
+package com.pizza11x.androidtoolkit.presentation.viewmodel.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

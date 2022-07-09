@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.presentation.ui.dialog
+package com.pizza11x.androidtoolkit.presentation.ui.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -24,7 +24,7 @@ class LoadingDialogFragment : DialogFragment() {
         return inflater.inflate(R.layout.fragment_loading, container, false)
     }
 
-    companion object{
+    companion object {
         const val TAG = "LOADER_DIALOG"
     }
 }

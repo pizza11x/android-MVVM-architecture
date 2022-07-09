@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
+import com.pizza11x.androidtoolkit.presentation.viewmodel.base.ABaseViewModel
 import com.pizza11x.androidtoolkit.utils.bindLayout
 
 abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
