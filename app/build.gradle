@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -36,26 +36,46 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
+    def ktx_version = "2.5.0"
+    def core_version = "1.8.0"
+    def app_compact_version = "1.4.2"
+    def material_version = "1.6.1"
+    def databinding_version = "7.2.1"
+    def coroutines_version = "1.6.1"
+    def dagger_hilt_version = "2.42"
+    def retrofit_version = "2.9.0"
+    def okhttp_version = "4.10.0"
+
+    api "androidx.core:core-ktx:$core_version"
+    api "androidx.appcompat:appcompat:$app_compact_version"
+    api "com.google.android.material:material:$material_version"
 
     /* DATABINDING */
-    implementation 'androidx.databinding:databinding-runtime:7.2.1'
+    api "androidx.databinding:databinding-runtime:$databinding_version"
 
     /* KTX */
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$ktx_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$ktx_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$ktx_version"
+    api "androidx.navigation:navigation-ui-ktx:$ktx_version"
+    api "androidx.navigation:navigation-fragment-ktx:$ktx_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$ktx_version"
+
 
     /* COROUTINES */
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     /* DAGGER HILT */
-    implementation "com.google.dagger:hilt-android:2.42"
-    kapt "com.google.dagger:hilt-compiler:2.42"
+    api "com.google.dagger:hilt-android:$dagger_hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
+
+    /* RETROFIT */
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    /* OKHTTP */
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
 
     /* TEST */
     testImplementation 'junit:junit:4.13.2'
