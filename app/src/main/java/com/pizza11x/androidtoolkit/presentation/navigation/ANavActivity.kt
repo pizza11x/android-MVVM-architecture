@@ -1,7 +1,9 @@
 package com.pizza11x.androidtoolkit.presentation.navigation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.IdRes
+import androidx.annotation.IntegerRes
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavOptions
@@ -29,6 +31,11 @@ abstract class ANavActivity<ActivityBinding : ViewDataBinding>(@LayoutRes privat
                         finish()
                     }
                 }
+                is NavigationCommand.GoTo -> goTo(it.resID, arguments = it.arguments)
+                is NavigationCommand.GoBack -> goBack()
+                is NavigationCommand.GoToStartDestination -> goToStartDestination()
+                is NavigationCommand.OpenBottomSheet -> it.bottomSheet.show(supportFragmentManager, it.tag)
+                is NavigationCommand.OpenDialog -> it.dialog.show(supportFragmentManager, it.tag)
                 else -> { /* DO NOTHING */
                 }
             }
