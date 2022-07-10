@@ -1,4 +1,4 @@
-package com.pizza11x.androidMVVMarchitecture.utils
+package com.pizza11x.androidMVVMarchitecture.utils.classes
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,6 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-/* LOADING */
-sealed class LoadingStatus
-object Loading : LoadingStatus()
-object Completed : LoadingStatus()
-object Failed : LoadingStatus()
-
-/* Navigation */
 sealed class NavigationCommand{
     object GoBack : NavigationCommand()
     object GoToStartDestination : NavigationCommand()

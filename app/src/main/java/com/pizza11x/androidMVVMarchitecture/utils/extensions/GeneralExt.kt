@@ -38,7 +38,6 @@ fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observ
     })
 }
 
-/* LIVE DATA */
 fun <T> LiveData<T>.observeNonNull(lifecycleOwner: LifecycleOwner, observer: (t: T) -> Unit) {
     this.observe(lifecycleOwner, Observer {
         it?.let(observer)

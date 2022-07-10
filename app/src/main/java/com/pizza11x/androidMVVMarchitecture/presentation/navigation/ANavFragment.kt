@@ -7,9 +7,9 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.pizza11x.androidMVVMarchitecture.presentation.navigation.base.ABaseNavViewModel
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.base.ABaseNavViewModel
 import com.pizza11x.androidMVVMarchitecture.presentation.ui.base.ABaseFragment
-import com.pizza11x.androidMVVMarchitecture.utils.NavigationCommand
+import com.pizza11x.androidMVVMarchitecture.utils.classes.NavigationCommand
 import com.pizza11x.androidMVVMarchitecture.utils.extensions.observeOnce
 
 abstract class ANavFragment<FragmentBinding : ViewDataBinding>(@LayoutRes layout: Int) :
