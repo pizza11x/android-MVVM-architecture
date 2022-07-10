@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.pizza11x.androidMVVMarchitecture.presentation.viewmodel.base.ABaseViewModel
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.base.ABaseViewModel
 import com.pizza11x.androidMVVMarchitecture.utils.extensions.bindLayout
 
 abstract class ABaseFragment<FragmentBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
@@ -31,9 +31,9 @@ abstract class ABaseFragment<FragmentBinding : ViewDataBinding>(@LayoutRes priva
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewCreated()
+        initViewBinding()
     }
 
     /* ABSTRACT FUN */
-    abstract fun viewCreated()
+    abstract fun initViewBinding()
 }

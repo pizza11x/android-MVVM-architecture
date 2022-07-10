@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.pizza11x.androidMVVMarchitecture.presentation.viewmodel.base.ABaseViewModel
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.base.ABaseViewModel
 import com.pizza11x.androidMVVMarchitecture.utils.extensions.bindLayout
 
 abstract class ABaseBottomSheetDialogFragment<SheetBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
@@ -31,9 +31,9 @@ abstract class ABaseBottomSheetDialogFragment<SheetBinding : ViewDataBinding>(@L
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewCreated()
+        initViewBinding()
     }
 
     /* ABSTRACT FUN */
-    abstract fun viewCreated()
+    abstract fun initViewBinding()
 }
