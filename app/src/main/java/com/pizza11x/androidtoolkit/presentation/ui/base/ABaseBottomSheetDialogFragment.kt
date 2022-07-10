@@ -8,13 +8,13 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.pizza11x.androidtoolkit.presentation.viewmodel.base.ABaseViewModel
-import com.pizza11x.androidtoolkit.utils.bindLayout
+import com.pizza11x.androidtoolkit.utils.extensions.bindLayout
 
-abstract class ABaseBottomSheetDialogFragment<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
+abstract class ABaseBottomSheetDialogFragment<SheetBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
     BottomSheetDialogFragment() {
 
     /* VARIABLES */
-    protected lateinit var binding: BindingType
+    protected lateinit var binding: SheetBinding
     abstract val viewModel: ABaseViewModel
 
     /* FRAGMENT FUN */

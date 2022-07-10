@@ -8,13 +8,13 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 
-abstract class ABaseDialogFragment<BindingType : ViewDataBinding>(
+abstract class ABaseDialogFragment<DialogBinding : ViewDataBinding>(
     @LayoutRes
     private val layout: Int
 ) : DialogFragment() {
 
     /* VARIABLES */
-    protected lateinit var binding: BindingType
+    protected lateinit var binding: DialogBinding
 
     /* DIALOG FRAGMENT FUN */
     override fun onCreateView(

@@ -1,5 +1,5 @@
 # Android Toolkit
-Is a library made in kotlin that provides the base classes for the creation of functionalities by implementing the MVVM pattern.
+It is a library made in kotlin which provides the basic classes for the creation of functionality following the MVVM pattern.
 
 # License
 Copyright 2022 pizza11x
