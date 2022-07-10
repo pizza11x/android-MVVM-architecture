@@ -1,4 +1,4 @@
-# Android Toolkit
+# Android MVVM Architecture
 It is a library made in kotlin which provides the basic classes for the creation of functionality following the MVVM pattern.
 
 # License
