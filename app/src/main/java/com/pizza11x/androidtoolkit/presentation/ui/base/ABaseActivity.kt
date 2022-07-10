@@ -5,17 +5,16 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
-import com.pizza11x.androidtoolkit.utils.bindLayout
-import dagger.hilt.android.AndroidEntryPoint
+import com.pizza11x.androidtoolkit.utils.extensions.bindLayout
 
-abstract class ABaseActivity<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
+abstract class ABaseActivity<ActivityBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
     AppCompatActivity() {
 
     /* VARIABLES */
-    protected lateinit var binding: BindingType
+    protected lateinit var binding: ActivityBinding
     abstract val viewModel: ViewModel
 
-    /* ACTIVITY FUNCTION */
+    /* ACTIVITY FUN */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = bindLayout(layout)

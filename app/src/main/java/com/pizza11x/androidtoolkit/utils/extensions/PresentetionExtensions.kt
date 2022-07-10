@@ -1,4 +1,4 @@
-package com.pizza11x.androidtoolkit.utils
+package com.pizza11x.androidtoolkit.utils.extensions
 
 import android.app.Activity
 import android.view.View
@@ -18,43 +18,43 @@ fun <T : ViewDataBinding> Activity.bindLayout(layout: Int): T {
 
 }
 
-fun AppCompatActivity.closeSoftKeyboard() {
-    currentFocus?.let { closeSoftKeyboard(it) }
+fun AppCompatActivity.closeKeyboard() {
+    currentFocus?.let { closeKeyboard(it) }
 }
 
 /* FRAGMENT */
-fun Fragment.openSoftKeyboard(view: View) {
+fun Fragment.openKeyboard(view: View) {
     if (view.requestFocus()) {
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
     }
 }
 
-fun Fragment.closeSoftKeyboard() {
-    view?.let { activity?.closeSoftKeyboard(it) }
+fun Fragment.closeKeyboard() {
+    view?.let { activity?.closeKeyboard(it) }
 }
 
-fun Fragment.showLoader() {
-    showLoader(requireActivity())
+fun Fragment.loading() {
+    loading(requireActivity())
 }
 
-fun Fragment.hideLoader() {
-    hideLoader(requireActivity())
+fun Fragment.loadingDismiss() {
+    loadingDismiss(requireActivity())
 }
 
-/* BOTTOMSHEET DIALOG FRAGMENT*/
+/* BOTTOM SHEET DIALOG FRAGMENT*/
 
-fun BottomSheetDialogFragment.showLoader() {
-    showLoader(requireActivity())
+fun BottomSheetDialogFragment.loading() {
+    loading(requireActivity())
 }
 
-fun BottomSheetDialogFragment.hideLoader() {
-    hideLoader(requireActivity())
+fun BottomSheetDialogFragment.loadingDismiss() {
+    loadingDismiss(requireActivity())
 }
 
 
 /* PRIVATE FUN */
 
-private fun showLoader(activity: FragmentActivity) {
+private fun loading(activity: FragmentActivity) {
     with(activity.supportFragmentManager) {
         if (findFragmentByTag(LoadingDialogFragment.TAG) == null) {
             LoadingDialogFragment().show(
@@ -65,7 +65,7 @@ private fun showLoader(activity: FragmentActivity) {
     }
 }
 
-private fun hideLoader(activity: FragmentActivity) {
+private fun loadingDismiss(activity: FragmentActivity) {
     with(activity.supportFragmentManager) {
         findFragmentByTag(LoadingDialogFragment.TAG)?.let {
             if (it is DialogFragment)

@@ -8,13 +8,13 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.pizza11x.androidtoolkit.presentation.viewmodel.base.ABaseViewModel
-import com.pizza11x.androidtoolkit.utils.bindLayout
+import com.pizza11x.androidtoolkit.utils.extensions.bindLayout
 
-abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private val layout: Int) :
+abstract class ABaseFragment<FragmentBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
     Fragment() {
 
     /* VARIABLES */
-    protected lateinit var binding: BindingType
+    protected lateinit var binding: FragmentBinding
     abstract val viewModel: ABaseViewModel
 
     /* FRAGMENT FUN */
@@ -31,9 +31,9 @@ abstract class ABaseFragment<BindingType : ViewDataBinding>(@LayoutRes private v
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewReady()
+        viewCreated()
     }
 
     /* ABSTRACT FUN */
-    abstract fun viewReady()
+    abstract fun viewCreated()
 }
