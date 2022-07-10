@@ -31,9 +31,9 @@ abstract class ABaseFragment<FragmentBinding : ViewDataBinding>(@LayoutRes priva
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewReady()
+        viewCreated()
     }
 
     /* ABSTRACT FUN */
-    abstract fun viewReady()
+    abstract fun viewCreated()
 }

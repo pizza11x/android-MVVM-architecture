@@ -19,6 +19,7 @@ object Failed : LoadingStatus()
 sealed class NavigationCommand{
     object GoBack : NavigationCommand()
     object GoToStartDestination : NavigationCommand()
+    object BackPressed : NavigationCommand()
 
     data class OpenActivity(val intent: Intent, val bundle: Bundle = bundleOf(), val closeCurrentActivity: Boolean = false) : NavigationCommand()
     data class GoTo(@IdRes val resID: Int, val arguments: Bundle = bundleOf()) : NavigationCommand()

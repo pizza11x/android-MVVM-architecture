@@ -31,9 +31,9 @@ abstract class ABaseBottomSheetDialogFragment<SheetBinding : ViewDataBinding>(@L
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewReady()
+        viewCreated()
     }
 
     /* ABSTRACT FUN */
-    abstract fun viewReady()
+    abstract fun viewCreated()
 }
