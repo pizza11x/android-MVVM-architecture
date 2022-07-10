@@ -45,6 +45,7 @@ dependencies {
     def dagger_hilt_version = "2.42"
     def retrofit_version = "2.9.0"
     def okhttp_version = "4.10.0"
+    def picasso_version = "2.8"
 
     api "androidx.core:core-ktx:$core_version"
     api "androidx.appcompat:appcompat:$app_compact_version"
@@ -76,6 +77,8 @@ dependencies {
     /* OKHTTP */
     api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
+    /* PICASSO */
+    api "com.squareup.picasso:picasso:$picasso_version"
 
     /* TEST */
     testImplementation 'junit:junit:4.13.2'
