@@ -5,8 +5,7 @@ interface IUiModel {
     val id: String
 
     /* PUBLIC FUN */
-    fun areContentsTheSame(obj: IUiModel): Boolean {
+    fun contentsEquals(obj: IUiModel): Boolean {
         return this == obj
-
     }
 }

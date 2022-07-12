@@ -1,5 +1,6 @@
 package com.pizza11x.androidMVVMarchitecture.data.network
 
+import com.pizza11x.androidMVVMarchitecture.data.network.NetworkConstants.TIMEOUT
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.CallAdapter
@@ -37,9 +38,5 @@ open class RetrofitFactory (
     fun <S> createService(url: String, serviceClass: Class<S>) : S{
         retrofit = builder.baseUrl(url).build()
         return retrofit.create(serviceClass)
-    }
-
-    companion object{
-        const val TIMEOUT = 60L
     }
 }

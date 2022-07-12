@@ -58,7 +58,7 @@ abstract class ABaseAdapter<N : IUiModel> :
         }
 
         override fun areContentsTheSame(oldItem: N, newItem: N): Boolean {
-            return oldItem.areContentsTheSame(newItem)
+            return oldItem.contentsEquals(newItem)
         }
 
     }
