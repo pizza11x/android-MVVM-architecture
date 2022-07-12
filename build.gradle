@@ -28,9 +28,9 @@ plugins {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'org.pizza11x'
+            groupId = 'org.github.pizza11x'
             artifactId = 'android-mvvm-architecture'
-            version = "0.0.2"
+            version = "0.0.3"
         }
     }
 }
