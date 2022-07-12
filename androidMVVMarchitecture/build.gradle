@@ -1,19 +1,21 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.pizza11x.androidtoolkit"
         minSdk 24
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -37,11 +39,47 @@ dependencies {
     def core_version = "1.8.0"
     def app_compact_version = "1.4.2"
     def material_version = "1.6.1"
+    def databinding_version = "7.2.1"
+    def coroutines_version = '1.6.3'
+    def dagger_hilt_version = "2.42"
+    def retrofit_version = "2.9.0"
+    def okhttp_version = '5.0.0-alpha.10'
+    def picasso_version = '2.71828'
 
     api "androidx.core:core-ktx:$core_version"
     api "androidx.appcompat:appcompat:$app_compact_version"
     api "com.google.android.material:material:$material_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
+
+
+    /* DATABINDING */
+    api "androidx.databinding:databinding-runtime:$databinding_version"
+
+    /* KTX */
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$ktx_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$ktx_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$ktx_version"
+    api "androidx.navigation:navigation-ui-ktx:$ktx_version"
+    api "androidx.navigation:navigation-fragment-ktx:$ktx_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$ktx_version"
+
+
+    /* COROUTINES */
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    /* DAGGER HILT */
+    api "com.google.dagger:hilt-android:$dagger_hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
+
+    /* RETROFIT */
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    /* OKHTTP */
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    /* PICASSO */
+    api "com.squareup.picasso:picasso:$picasso_version"
 
     /* TEST */
     testImplementation 'junit:junit:4.13.2'
@@ -52,5 +90,4 @@ dependencies {
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3'
     testImplementation 'io.mockk:mockk:1.12.4'
     androidTestImplementation 'io.mockk:mockk-android:1.12.4'
-
 }
