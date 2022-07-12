@@ -6,9 +6,9 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
-import com.pizza11x.androidMVVMarchitecture.presentation.navigation.base.ABaseNavViewModel
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.base.ABaseNavViewModel
 import com.pizza11x.androidMVVMarchitecture.presentation.ui.base.ABaseActivity
-import com.pizza11x.androidMVVMarchitecture.utils.NavigationCommand
+import com.pizza11x.androidMVVMarchitecture.utils.classes.NavigationCommand
 import com.pizza11x.androidMVVMarchitecture.utils.extensions.observeOnce
 
 abstract class ANavActivity<ActivityBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :

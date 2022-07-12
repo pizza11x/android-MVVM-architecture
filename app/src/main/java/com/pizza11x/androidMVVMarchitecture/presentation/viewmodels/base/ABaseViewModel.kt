@@ -1,9 +1,12 @@
-package com.pizza11x.androidMVVMarchitecture.presentation.viewmodel.base
+package com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pizza11x.androidMVVMarchitecture.utils.*
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.Completed
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.Failed
+import com.pizza11x.androidMVVMarchitecture.data.network.Loading
+import com.pizza11x.androidMVVMarchitecture.presentation.viewmodels.LoadingStatus
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
