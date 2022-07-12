@@ -22,3 +22,4 @@ sealed class NetworkResponse<out S, out F> {
 data class Success<out S>(val success: S) : NetworkResponse<S, Nothing>()
 data class Failure<out T>(val failure: T) : NetworkResponse<Nothing, T>()
 object Loading : NetworkResponse<Nothing, Nothing>()
+

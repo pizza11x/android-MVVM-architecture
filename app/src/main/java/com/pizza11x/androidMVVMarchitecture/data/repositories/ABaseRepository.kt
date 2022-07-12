@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flow
 abstract class ABaseRepository {
 
     /* PUBLIC FUN */
-    suspend fun <ResponseModel, ErrorModel> makeCall(
+    suspend fun <ResponseModel, ErrorModel> executeCall(
         callBlock: suspend () -> NetworkResponse<ResponseModel, ErrorModel>
     ): Flow<NetworkResponse<ResponseModel, ErrorModel>> = flow {
         emit(Loading)
