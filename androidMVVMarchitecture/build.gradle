@@ -91,3 +91,30 @@ dependencies {
     testImplementation 'io.mockk:mockk:1.12.4'
     androidTestImplementation 'io.mockk:mockk-android:1.12.4'
 }
+
+
+task copyPgMapToRelease(type: Copy, dependsOn: 'assembleRelease') {
+    from('build/outputs/mapping/release')
+    into('release-proguard-map')
+    include('*.txt')
+}
+
+task copyLibToRelease(type: Copy, dependsOn: 'copyPgMapToRelease') {
+    from('build/outputs/aar')
+    into('release')
+    include(project.name + '-release.aar')
+    rename(project.name + '-release.aar', project.name + '.aar')
+}
+
+task signArtifactWithGPG(dependsOn: 'copyLibToRelease'){
+    doLast {
+        try {
+            def artifactToSign = file("release/${project.name}.aar")
+            signing {
+                sign artifactToSign
+            }
+        } catch (Exception ex) {
+            project.logger.lifecycle("" + ex.localizedMessage)
+        }
+    }
+}
