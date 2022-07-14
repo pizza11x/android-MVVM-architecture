@@ -5,9 +5,14 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
+    id 'maven-publish'
 }
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -51,7 +56,6 @@ dependencies {
     api "com.google.android.material:material:$material_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
 
-
     /* DATABINDING */
     api "androidx.databinding:databinding-runtime:$databinding_version"
 
@@ -90,4 +94,25 @@ dependencies {
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3'
     testImplementation 'io.mockk:mockk:1.12.4'
     androidTestImplementation 'io.mockk:mockk-android:1.12.4'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.pizza11x'
+                artifactId = 'android-MVVM-architecture'
+                version = '0.0.4'
+            }
+        }
+    }
+}
+
+android {
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
 }

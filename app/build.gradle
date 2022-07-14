@@ -4,6 +4,10 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -33,7 +37,7 @@ android {
 
 dependencies {
 
-    def ktx_version = "2.5.0"
+    implementation project(path: ':androidMVVMarchitecture')
     def core_version = "1.8.0"
     def app_compact_version = "1.4.2"
     def material_version = "1.6.1"
