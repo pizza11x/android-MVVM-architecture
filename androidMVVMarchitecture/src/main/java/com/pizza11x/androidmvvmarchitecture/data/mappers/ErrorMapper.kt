@@ -1,7 +1,6 @@
 package com.pizza11x.androidmvvmarchitecture.data.mappers
 
 import android.content.Context
-import com.pizza11x.androidmvvmarchitecture.data.mappers.IErrorMapperSource
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

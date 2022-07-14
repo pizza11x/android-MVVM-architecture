@@ -55,10 +55,13 @@ dependencies {
     def okhttp_version = '5.0.0-alpha.10'
     def picasso_version = '2.71828'
 
+
     api "androidx.core:core-ktx:$core_version"
     api "androidx.appcompat:appcompat:$app_compact_version"
     api "com.google.android.material:material:$material_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
+    implementation "androidx.annotation:annotation:1.4.0"
+
 
     /* DATABINDING */
     api "androidx.databinding:databinding-runtime:$databinding_version"
@@ -71,13 +74,13 @@ dependencies {
     api "androidx.navigation:navigation-fragment-ktx:$ktx_version"
     api "androidx.navigation:navigation-dynamic-features-fragment:$ktx_version"
 
-
     /* COROUTINES */
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     /* DAGGER HILT */
     api "com.google.dagger:hilt-android:$dagger_hilt_version"
     kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
+    api "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
 
     /* RETROFIT */
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -98,6 +101,8 @@ dependencies {
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3'
     testImplementation 'io.mockk:mockk:1.12.4'
     androidTestImplementation 'io.mockk:mockk-android:1.12.4'
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$dagger_hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$dagger_hilt_version"
 }
 
 afterEvaluate {
@@ -111,6 +116,9 @@ afterEvaluate {
             }
         }
     }
+}
+kapt {
+    correctErrorTypes true
 }
 
 android {
