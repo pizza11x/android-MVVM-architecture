@@ -65,6 +65,8 @@ dependencies {
 
     /* DATABINDING */
     api "androidx.databinding:databinding-runtime:$databinding_version"
+    kapt 'androidx.databinding:databinding-compiler:7.2.1'
+
 
     /* KTX */
     api "androidx.lifecycle:lifecycle-runtime-ktx:$ktx_version"
