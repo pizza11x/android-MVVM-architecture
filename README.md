@@ -1,6 +1,10 @@
 # Android MVVM Architecture
 It is a library made in kotlin which provides the basic classes for the creation of functionality following the MVVM pattern.
 
+# Documentation
+if you want to read the documentation, you can find it in the Wiki **(Work in progress)** of this repository, or download it at the following link
+https://mega.nz/file/QfYVVYhC#LZZmRjjTIe1jG_2_mkvUDxRH2x5OkIPsPIz5MsOzJcA
+
 # License
 Copyright 2022 pizza11x
 
