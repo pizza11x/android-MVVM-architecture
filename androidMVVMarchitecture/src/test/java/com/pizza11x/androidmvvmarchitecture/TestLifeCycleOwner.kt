@@ -1,4 +1,4 @@
-package com.pizza11x.androidmvvmarchitecture1
+package com.pizza11x.androidmvvmarchitecture
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner

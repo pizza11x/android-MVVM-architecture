@@ -1,6 +1,17 @@
 # Android MVVM Architecture
 It is a library made in kotlin which provides the basic classes for the creation of functionality following the MVVM pattern.
 
+# Configuration
+To import the library it is necessary to add the reference to the jitpack repository in the project gradle:
+<p align="center">
+maven {url 'https://jitpack.io/'}
+</p>
+
+In the app / module gradle that must implement android-MVVM-architecture:
+<p align="center">
+api “com.github.pizza11x:android-MVVM-architecture:$version”
+</p>
+
 # Documentation
 if you want to read the documentation, you can find it in the Wiki **(Work in progress)** of this repository.
 

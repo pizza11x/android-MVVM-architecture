@@ -1,4 +1,4 @@
-package com.pizza11x.androidmvvmarchitecture1
+package com.pizza11x.androidmvvmarchitecture
 
 import com.pizza11x.androidmvvmarchitecture.data.network.MockInterceptor
 
