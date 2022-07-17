@@ -7,13 +7,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.pizza11x.androidmvvmarchitecture.presentation.ui.base.ABaseActivity
-import com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base.ABaseNavViewModel
+import com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base.ANavViewModel
 import com.pizza11x.androidmvvmarchitecture.utils.extensions.observeOnce
 
 abstract class ANavActivity<ActivityBinding : ViewDataBinding>(@LayoutRes private val layout: Int) :
     ABaseActivity<ActivityBinding>(layout) {
     /* VARIABLES */
-    abstract override val viewModel: ABaseNavViewModel
+    abstract override val viewModel: ANavViewModel
     protected abstract val currentNavHostID: Int
 
     /* ACTIVITY FUN */
