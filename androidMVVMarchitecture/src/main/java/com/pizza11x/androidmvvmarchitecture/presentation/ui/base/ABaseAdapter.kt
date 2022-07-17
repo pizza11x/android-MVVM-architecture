@@ -49,7 +49,7 @@ abstract class ABaseAdapter<N : IUiModel> :
 
     /* INNER CLASSES */
     abstract inner class ABaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        abstract fun bindItem(items: N)
+        abstract fun bindItem(item: N)
     }
 
     inner class DiffCallBack : DiffUtil.ItemCallback<N>() {
