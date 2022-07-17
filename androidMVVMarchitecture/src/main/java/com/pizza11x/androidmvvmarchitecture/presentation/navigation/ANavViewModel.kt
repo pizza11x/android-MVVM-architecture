@@ -1,7 +1,7 @@
-package com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base
+package com.pizza11x.androidmvvmarchitecture.presentation.navigation
 
 import androidx.lifecycle.MutableLiveData
-import com.pizza11x.androidmvvmarchitecture.presentation.navigation.NavigationCommand
+import com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base.ABaseViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 
 abstract class ANavViewModel(coroutineDispatcher: CoroutineDispatcher? = null) :
