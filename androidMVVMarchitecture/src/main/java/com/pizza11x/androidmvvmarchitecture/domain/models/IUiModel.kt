@@ -6,6 +6,6 @@ interface IUiModel {
 
     /* PUBLIC FUN */
     fun contentsEquals(obj: IUiModel): Boolean {
-        return this == obj
+        return id == obj.id
     }
 }
