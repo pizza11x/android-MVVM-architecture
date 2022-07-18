@@ -5,5 +5,5 @@ interface IErrorMapperSource {
     val errorsMap : Map<Int, String>
 
     /* FUN */
-    fun getErrorMessage(errorCode: Int) : String
+    fun getErrorMessage(errorMessageID: Int) : String
 }
