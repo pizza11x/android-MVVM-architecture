@@ -24,10 +24,10 @@ class NetworkCallAdapterFactory : CallAdapter.Factory() {
         check(responseType is ParameterizedType) { PARAMETERIZED_TYPE_MESSAGE }
 
         val errorBodyType = getParameterUpperBound(1, returnType)
-        if (getRawType(errorBodyType) != NetworkResponse::class.java)
+        if (getRawType(errorBodyType) != ApiError::class.java)
             return null
 
-        val successBodyType = getParameterUpperBound(1, returnType)
+        val successBodyType = getParameterUpperBound(0, returnType)
         return NetworkCallAdapter<Any>(successBodyType)
 
 
