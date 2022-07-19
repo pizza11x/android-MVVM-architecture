@@ -8,14 +8,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.pizza11x.androidmvvmarchitecture.presentation.ui.base.ABaseFragment
-import com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base.ABaseNavViewModel
 import com.pizza11x.androidmvvmarchitecture.utils.extensions.observeOnce
 
 abstract class ANavFragment<FragmentBinding : ViewDataBinding>(@LayoutRes layout: Int) :
     ABaseFragment<FragmentBinding>(layout) {
 
     /* VARIABLES */
-    abstract override val viewModel: ABaseNavViewModel
+    abstract override val viewModel: ANavViewModel
 
     /* FRAGMENT FUN */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

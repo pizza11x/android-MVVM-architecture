@@ -1,4 +1,4 @@
-package com.pizza11x.androidmvvmarchitecture.presentation.viewmodels.base
+package com.pizza11x.androidmvvmarchitecture.presentation.navigation
 
 import androidx.lifecycle.MutableLiveData
 import com.pizza11x.androidmvvmarchitecture.presentation.navigation.base.ABaseNavigation

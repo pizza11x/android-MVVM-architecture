@@ -11,7 +11,7 @@ data class RetrofitBuilder(
     private var callAdapterFactories: MutableList<CallAdapter.Factory> = mutableListOf(),
 ) {
     /* Public FUN */
-    fun build() = RetrofitFactory(
+    fun build() = ORetrofitFactory(
         interceptors, networkInterceptor, converterFactories, callAdapterFactories
     )
 

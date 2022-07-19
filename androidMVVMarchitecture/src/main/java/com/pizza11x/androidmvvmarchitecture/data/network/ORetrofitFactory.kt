@@ -8,7 +8,7 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
-open class RetrofitFactory (
+open class ORetrofitFactory (
     interceptors: MutableList<Interceptor> = mutableListOf(),
     networkInterceptor: MutableList<Interceptor> = mutableListOf(),
     converterFactories: MutableList<Converter.Factory> = mutableListOf(),
