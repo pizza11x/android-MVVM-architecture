@@ -13,7 +13,7 @@ api “com.github.pizza11x:android-MVVM-architecture:$version”
 </p>
 
 # Documentation
-if you want to read the documentation, you can find it in the Wiki **(Work in progress)** of this repository.
+if you want to read the documentation, you can find it in the Wiki of this repository or download to thi link -> https://mega.nz/file/NGphnDKJ#g8VAt7uCoXQPBLJ6c-ydlOsjDyQ0v_y76vJEEP29k8Q.
 
 # License
 Copyright 2022 pizza11x
