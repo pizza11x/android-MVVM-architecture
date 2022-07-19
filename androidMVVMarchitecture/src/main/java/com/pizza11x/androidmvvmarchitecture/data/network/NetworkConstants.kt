@@ -8,7 +8,7 @@ object NetworkConstants {
     const val MOCKS_ASSETS_PATH = "mocks/"
 
     /* ERROR MESSAGE */
-    const val PARAMETERIZED_TYP_MESSAGE = "Response type must be a parameterized type."
+    const val PARAMETERIZED_TYPE_MESSAGE = "Response type must be a parameterized type."
     const val EMPTY_RESPONSE_BODY_MESSAGE = "Response body was null"
 
     /* TIME */

@@ -1,6 +1,6 @@
 package com.pizza11x.androidmvvmarchitecture.data.network
 
-import com.pizza11x.androidmvvmarchitecture.data.network.NetworkConstants.PARAMETERIZED_TYP_MESSAGE
+import com.pizza11x.androidmvvmarchitecture.data.network.NetworkConstants.PARAMETERIZED_TYPE_MESSAGE
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
@@ -17,17 +17,17 @@ class NetworkCallAdapterFactory : CallAdapter.Factory() {
     ): CallAdapter<*, *>? {
         if (getRawType(returnType) != Call::class.java)
             return null
-        check(returnType is ParameterizedType) { PARAMETERIZED_TYP_MESSAGE }
+        check(returnType is ParameterizedType) { PARAMETERIZED_TYPE_MESSAGE }
         val responseType = getParameterUpperBound(0, returnType)
         if (getRawType(responseType) != NetworkResponse::class.java)
             return null
-        check(responseType is ParameterizedType) { PARAMETERIZED_TYP_MESSAGE }
+        check(responseType is ParameterizedType) { PARAMETERIZED_TYPE_MESSAGE }
 
         val errorBodyType = getParameterUpperBound(1, returnType)
-        if (getRawType(errorBodyType) != NetworkResponse::class.java)
+        if (getRawType(errorBodyType) != ApiError::class.java)
             return null
 
-        val successBodyType = getParameterUpperBound(1, returnType)
+        val successBodyType = getParameterUpperBound(0, returnType)
         return NetworkCallAdapter<Any>(successBodyType)
 
 

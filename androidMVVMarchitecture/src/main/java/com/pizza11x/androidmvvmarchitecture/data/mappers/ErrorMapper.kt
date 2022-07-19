@@ -9,5 +9,5 @@ class ErrorMapper @Inject constructor(
 ) : IErrorMapperSource {
 
     /* MAPPER SOURCE FUN */
-    override fun getErrorMessage(errorCode: Int): String = context.getString(errorCode)
+    override fun getErrorMessage(errorMessageID: Int): String = context.getString(errorMessageID)
 }

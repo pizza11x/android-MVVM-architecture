@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class ErrorManager @Inject constructor(private val mapper: ErrorMapper) : IErrorUseCase {
 
-    /* ERROR USE CASE */
+    /* ERROR USE CASE FUN */
     override fun getError(code: Int): GeneralError {
         return GeneralError(code, mapper.errorsMap.getValue(code))
     }
