@@ -1,14 +1,18 @@
 package com.pizza11x.androidmvvmarchitecture.data.local.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.OnConflictStrategy.*
-import androidx.room.Update
 import com.pizza11x.androidmvvmarchitecture.data.models.OBaseDbEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface IBaseDbDao {
+
+    /* QUERY FUN */
+    suspend fun getById(id: String) : Flow<OBaseDbEntity>
+
+    suspend fun getAll() : Flow<List<OBaseDbEntity>>
+
     /* INSERT FUN */
     @Insert(onConflict = REPLACE)
     suspend fun insert(entity: OBaseDbEntity): Long
@@ -29,5 +33,8 @@ interface IBaseDbDao {
 
     @Delete
     fun delete(entities: List<OBaseDbEntity>)
+
+    @Delete
+    fun deleteById(id: String)
 
 }
