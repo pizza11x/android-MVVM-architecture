@@ -16,10 +16,10 @@ abstract class ErrorModule{
 
     @Binds
     @Singleton
-    abstract fun provideErrorFactoryImpl(manager: ErrorManager) : IErrorUseCase
+    abstract fun providesErrorFactoryImpl(manager: ErrorManager) : IErrorUseCase
 
     @Binds
     @Singleton
-    abstract fun provideErrorMapper(mapper: ErrorMapper) : IErrorMapperSource
+    abstract fun providesErrorMapper(mapper: ErrorMapper) : IErrorMapperSource
 
 }
