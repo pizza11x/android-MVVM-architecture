@@ -14,3 +14,16 @@ annotation class IoDispatcher
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
 annotation class MainDispatcher
+
+/* SHARED PREFERENCES */
+@Retention(AnnotationRetention.BINARY)
+@Qualifier
+annotation class UserSharedPreferences
+
+@Retention(AnnotationRetention.BINARY)
+@Qualifier
+annotation class LoginSharedPreferences
+
+@Retention(AnnotationRetention.BINARY)
+@Qualifier
+annotation class BiometricsSharedPreferences
